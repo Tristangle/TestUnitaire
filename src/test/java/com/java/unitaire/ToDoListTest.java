@@ -1,14 +1,17 @@
-import org.junit.Assert;
+package com.java.unitaire;
+
+import com.java.unitaire.EmailSenderService;
+import com.java.unitaire.Items;
+import com.java.unitaire.ToDoList;
 import org.junit.Before;
 import org.junit.Test;
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -68,7 +71,7 @@ public class ToDoListTest {
     /*¨public void testTempsAjoutItems() throws Exception{
         this.toDoList.addItems(Item1);
         this.toDoList.addItems(Item2);
-        //Exception exception = assertThrows(ToDoList.class, () -> ToDoList.isValidItemDate(Item1));
+        //Exception exception = assertThrows(com.java.unitaire.ToDoList.class, () -> com.java.unitaire.ToDoList.isValidItemDate(Item1));
         //assertEquals("Délais d'attente non atteint", exception.getMessage());
     }*/
     @Test

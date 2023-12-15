@@ -1,3 +1,5 @@
+package com.java.unitaire;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

@@ -8,12 +8,6 @@
     <artifactId>User</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.0</version> <!-- Utilisez la version de Spring Boot que vous souhaitez -->
-    </parent>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -33,10 +27,15 @@
             <version>5.2.0</version>
             <scope>test</scope>
         </dependency>
-        <!-- Spring Boot Starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+            <version>3.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>2.0</version>
         </dependency>
     </dependencies>
 

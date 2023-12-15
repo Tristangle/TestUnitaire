@@ -1,3 +1,9 @@
+package com.java.unitaire;
+
+import com.java.unitaire.EmailSenderService;
+import com.java.unitaire.Items;
+import com.java.unitaire.ToDoList;
+import com.java.unitaire.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

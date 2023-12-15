@@ -1,3 +1,7 @@
+package com.java.unitaire;
+
+import com.java.unitaire.EmailSenderService;
+import com.java.unitaire.Items;
 import lombok.Setter;
 
 import java.time.LocalDateTime;

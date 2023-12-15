@@ -1,3 +1,5 @@
+package com.java.unitaire;
+
 import com.sun.management.UnixOperatingSystemMXBean;
 import lombok.AllArgsConstructor;
 import lombok.Setter;
