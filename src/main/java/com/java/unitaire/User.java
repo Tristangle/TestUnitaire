@@ -1,7 +1,9 @@
 package com.java.unitaire;
 
 import com.sun.management.UnixOperatingSystemMXBean;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
@@ -9,14 +11,21 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
-
+@Entity
 @Setter
+@Table(name = "users")
 public class User {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    private long id;
     private String email;
     private String nom;
     private String prenom;
     private String motDePasse;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "todolist", unique = true)
+    @Getter
     private ToDoList toDoList;
 
     private LocalDate dateNaissance;
@@ -32,6 +41,11 @@ public class User {
         this.date = date;
         this.toDoList = toDoList;
     }
+
+    public User() {
+
+    }
+
     public static boolean contientMinuscule(String motDePasse) {
         for (int i = 0; i < motDePasse.length(); i++) {
             if (Character.isLowerCase(motDePasse.charAt(i))) {

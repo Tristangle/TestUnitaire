@@ -2,21 +2,38 @@ package com.java.unitaire;
 
 import com.java.unitaire.EmailSenderService;
 import com.java.unitaire.Items;
+import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+@Entity
 @Setter
+@Table(name = "todolist")
 public class ToDoList {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    private long id;
 
+    @OneToMany(mappedBy = "toDoList", cascade = CascadeType.ALL)
     private ArrayList<Items> tableauItems;
-    private EmailSenderService emailSenderService;
+    @OneToOne(mappedBy = "toDoList")
+    @Getter
+    private User user;
+    //private EmailSenderService emailSenderService;
 
     public ToDoList(ArrayList<Items> tableauItems, EmailSenderService emailSenderService){
         this.tableauItems = tableauItems;
-        this.emailSenderService = emailSenderService;
+        //this.emailSenderService = emailSenderService;
     }
+
+    public ToDoList() {
+
+    }
+
     public boolean checkItemName(Items Item){
             for (Items tableauItem : tableauItems) {
                 if (Item.getName().equals(tableauItem.getName())) {
@@ -53,7 +70,7 @@ public class ToDoList {
         else{
             tableauItems.add(Item);
             if(tableauItems.size() == 8){
-                this.emailSenderService.sendEmail();
+                //this.emailSenderService.sendEmail();
             }
         }
 
