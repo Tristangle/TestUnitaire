@@ -21,7 +21,8 @@ public class Items {
     private LocalDateTime dateCreation;
     @ManyToOne
     @JoinColumn(name = "TodoList")
-    private ToDoList todolist;
+    @Getter
+    private ToDoList toDoList;
     public Items(String name, String content){
         this.name = name;
         this.content = content;

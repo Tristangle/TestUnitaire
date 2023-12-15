@@ -24,7 +24,7 @@ public class User {
     private String prenom;
     private String motDePasse;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "todolist", unique = true)
+    @JoinColumn(name = "id", unique = true)
     @Getter
     private ToDoList toDoList;
 

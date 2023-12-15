@@ -18,7 +18,7 @@ public class ToDoList {
     @Getter
     private long id;
 
-    @OneToMany(mappedBy = "toDoList", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "ToDoList", cascade = CascadeType.ALL)
     private ArrayList<Items> tableauItems;
     @OneToOne(mappedBy = "toDoList")
     @Getter
